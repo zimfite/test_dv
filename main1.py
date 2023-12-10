@@ -22,7 +22,7 @@ def start(message):
 def help(message):
     bot.send_message(message.chat.id, "Еще раз тебя приветствую, мой дорогой друг, вижу вам нужна помощь.\nПуть к определению человека,которому тебе нужно готовить подарок: \n1.Написать команду /start либо выбрать в нижнем меню\n2.Под тем сообщением будет кнопка зарегистрироваться, ее нужно нажать\n3.Введит свою фамилию в именительном падеже с заглавной буквы\n4.Начинайте готовить подарок тому человеку)")
 
-@bot.callback_query_handler(func=lambda call: True)
+@bot.callback_query_handler(lambda call: True)
 def callback(call):
     if call.message:
         if call.data == "reg":
